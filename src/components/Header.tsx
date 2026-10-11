@@ -106,6 +106,21 @@ export const Header: React.FC<HeaderProps> = ({
           title: 'Registres Pédagogiques et Feuilles d Examen',
           subtitle: 'Génération et impression des états officiels conformes au ministère',
         };
+      case 'scanner':
+        return {
+          title: "Guichet d'Émargement Direct & Scan de Badges",
+          subtitle: "Pointage physique par douchette USB, webcam et émargement instantané au guichet",
+        };
+      case 'analytics':
+        return {
+          title: "Analytique Prédictive & Prévention du Décrochage",
+          subtitle: "Profils hebdomadaires (Dimanche-Jeudi), créneaux sensibles et cohortes à risque",
+        };
+      case 'audit':
+        return {
+          title: "Journal d'Audit & Traçabilité Réglementaire",
+          subtitle: "Registre cryptographique infalsifiable conforme au décret exécutif 18-162 et ISO 27001",
+        };
       default:
         return { title: 'Administration INSFP', subtitle: 'Portail de gestion' };
     }
