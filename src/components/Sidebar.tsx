@@ -13,12 +13,16 @@ import {
   MessageSquare,
   Bell,
   BookOpen,
+  Scan,
+  TrendingUp,
+  ShieldCheck,
 } from 'lucide-react';
 import { InsfpUser } from '../types';
 import { ShinyText, Magnet } from './react-bits';
 
 export type NavigationTab =
   | 'dashboard'
+  | 'scanner'
   | 'trainees'
   | 'instructors'
   | 'classes'
@@ -26,9 +30,11 @@ export type NavigationTab =
   | 'sessions'
   | 'justifications'
   | 'alerts'
+  | 'analytics'
   | 'messages'
   | 'notifications'
-  | 'reports';
+  | 'reports'
+  | 'audit';
 
 interface SidebarProps {
   currentTab: NavigationTab;
@@ -56,6 +62,11 @@ export const Sidebar: React.FC<SidebarProps> = ({
       id: 'dashboard' as NavigationTab,
       label: 'Tableau de bord',
       icon: LayoutDashboard,
+    },
+    {
+      id: 'scanner' as NavigationTab,
+      label: 'Guichet Émargement',
+      icon: Scan,
     },
     {
       id: 'trainees' as NavigationTab,
@@ -97,6 +108,11 @@ export const Sidebar: React.FC<SidebarProps> = ({
       badgeColor: 'bg-red-500/20 text-red-300 border border-red-500/30',
     },
     {
+      id: 'analytics' as NavigationTab,
+      label: 'Analytique & Risque',
+      icon: TrendingUp,
+    },
+    {
       id: 'messages' as NavigationTab,
       label: 'Messagerie',
       icon: MessageSquare,
@@ -114,6 +130,11 @@ export const Sidebar: React.FC<SidebarProps> = ({
       id: 'reports' as NavigationTab,
       label: 'Registres & Export',
       icon: FileText,
+    },
+    {
+      id: 'audit' as NavigationTab,
+      label: "Journal d'Audit",
+      icon: ShieldCheck,
     },
   ];
 

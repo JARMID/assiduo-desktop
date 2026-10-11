@@ -18,6 +18,9 @@ import {
   MessageSquare,
   Bell,
   Smartphone,
+  Scan,
+  TrendingUp,
+  ShieldCheck,
 } from 'lucide-react';
 import { NavigationTab } from './Sidebar';
 import { Student } from '../types';
@@ -87,6 +90,17 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
         icon: <LayoutDashboard className="w-4 h-4 text-emerald-400" />,
         action: () => {
           onNavigate('dashboard');
+          onClose();
+        },
+      },
+      {
+        id: 'nav-scanner',
+        title: 'Guichet d Émargement Direct & Scan de Badges',
+        category: 'NAVIGATION',
+        shortcut: 'G Q',
+        icon: <Scan className="w-4 h-4 text-emerald-400" />,
+        action: () => {
+          onNavigate('scanner');
           onClose();
         },
       },
@@ -197,6 +211,28 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
         icon: <Printer className="w-4 h-4 text-slate-300" />,
         action: () => {
           onNavigate('reports');
+          onClose();
+        },
+      },
+      {
+        id: 'nav-analytics',
+        title: 'Analytique Prédictive & Prévention du Décrochage',
+        category: 'NAVIGATION',
+        shortcut: 'G T',
+        icon: <TrendingUp className="w-4 h-4 text-emerald-400" />,
+        action: () => {
+          onNavigate('analytics');
+          onClose();
+        },
+      },
+      {
+        id: 'nav-audit',
+        title: 'Journal d Audit & Traçabilité Réglementaire',
+        category: 'NAVIGATION',
+        shortcut: 'G U',
+        icon: <ShieldCheck className="w-4 h-4 text-emerald-400" />,
+        action: () => {
+          onNavigate('audit');
           onClose();
         },
       },

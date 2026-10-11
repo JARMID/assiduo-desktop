@@ -185,3 +185,15 @@ export interface DashboardStats {
   criticalAlertsCount: number;
   overallAttendanceRate: number;
 }
+
+export interface AuditEvent {
+  id: string;
+  actor_name: string;
+  actor_role: string;
+  action_type: 'EMARGEMENT' | 'JUSTIFICATION' | 'MODIFICATION' | 'EXPORT' | 'SECURITY' | 'COMMUNICATION';
+  target: string;
+  details: string;
+  severity: 'INFO' | 'SUCCESS' | 'WARNING' | 'CRITICAL';
+  station: string;
+  timestamp: string;
+}

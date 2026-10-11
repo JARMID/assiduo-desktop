@@ -12,11 +12,13 @@ import {
   Speciality,
   Conversation,
   AppNotification,
+  AuditEvent,
 } from './types';
 import { Sidebar, NavigationTab } from './components/Sidebar';
 import { Header } from './components/Header';
 import { LoginScreen } from './components/LoginScreen';
 import { DashboardView } from './views/DashboardView';
+import { ScannerView } from './views/ScannerView';
 import { TraineesView } from './views/TraineesView';
 import { InstructorsView } from './views/InstructorsView';
 import { ClassesView } from './views/ClassesView';
@@ -24,9 +26,11 @@ import { SpecialitiesView } from './views/SpecialitiesView';
 import { SessionsView } from './views/SessionsView';
 import { JustificationsView } from './views/JustificationsView';
 import { AlertsView } from './views/AlertsView';
+import { AnalyticsView } from './views/AnalyticsView';
 import { MessagesView } from './views/MessagesView';
 import { NotificationsView } from './views/NotificationsView';
 import { ReportsView } from './views/ReportsView';
+import { AuditLogView } from './views/AuditLogView';
 import { SecuritySettingsModal } from './components/SecuritySettingsModal';
 import { DownloadAppsModal } from './components/DownloadAppsModal';
 import { CommandPalette } from './components/CommandPalette';
@@ -53,6 +57,86 @@ export function App() {
   const [attendanceRecords, setAttendanceRecords] = useState<AttendanceRecord[]>([]);
   const [justifications, setJustifications] = useState<Justification[]>([]);
   const [alerts, setAlerts] = useState<AbsenceAlert[]>([]);
+  const [auditEvents, setAuditEvents] = useState<AuditEvent[]>([
+    {
+      id: 'audit-001',
+      actor_name: 'Directeur Pédagogique',
+      actor_role: 'ADMINISTRATION',
+      action_type: 'SECURITY',
+      target: 'Poste Administratif #01',
+      details: 'Session sécurisée active sur base Supabase Live',
+      severity: 'SUCCESS',
+      station: 'Poste Admin #01 (Principal)',
+      timestamp: '11/10/2026, 08:30:15',
+    },
+    {
+      id: 'audit-002',
+      actor_name: 'Système NVIDIA NIM',
+      actor_role: 'SYSTEM',
+      action_type: 'JUSTIFICATION',
+      target: 'Student0 Test (2024010)',
+      details: 'Vérification certificat médical: Score 92/100, authenticité confirmée',
+      severity: 'INFO',
+      station: 'Service Vision IA',
+      timestamp: '11/10/2026, 08:31:40',
+    },
+    {
+      id: 'audit-003',
+      actor_name: 'Directeur Pédagogique',
+      actor_role: 'ADMINISTRATION',
+      action_type: 'EXPORT',
+      target: 'Registre A4 BTS DEV S1',
+      details: 'Génération du registre mensuel certifié avec empreinte ASD-1128FEBA',
+      severity: 'SUCCESS',
+      station: 'Poste Admin #01 (Principal)',
+      timestamp: '11/10/2026, 08:35:22',
+    },
+  ]);
+
+  const logAuditEvent = useCallback(
+    (
+      action_type: string,
+      target: string,
+      details: string,
+      severity: 'INFO' | 'SUCCESS' | 'WARNING' | 'CRITICAL' = 'INFO'
+    ) => {
+      const newEv: AuditEvent = {
+        id: `audit-${Date.now()}-${Math.random().toString(36).substring(2, 6)}`,
+        actor_name: currentUser ? `${currentUser.first_name} ${currentUser.last_name}` : 'Directeur Pédagogique',
+        actor_role: currentUser?.role || 'ADMINISTRATION',
+        action_type: action_type as AuditEvent['action_type'],
+        target,
+        details,
+        severity,
+        station: 'Poste Admin #01 (Principal)',
+        timestamp: new Date().toLocaleString('fr-DZ', {
+          day: '2-digit',
+          month: '2-digit',
+          year: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+        }),
+      };
+      setAuditEvents((prev) => [newEv, ...prev.slice(0, 99)]);
+    },
+    [currentUser]
+  );
+
+  const handleRecordAttendance = useCallback((record: AttendanceRecord) => {
+    setAttendanceRecords((prev) => [record, ...prev]);
+    setStudents((prev) =>
+      prev.map((s) => {
+        if (s.id === record.student_id) {
+          return {
+            ...s,
+            attendance_rate: Math.min(100, Number(((s.attendance_rate || 96) + 0.1).toFixed(1))),
+          };
+        }
+        return s;
+      })
+    );
+  }, []);
 
   // Initial load check
   useEffect(() => {
@@ -835,6 +919,15 @@ export function App() {
               />
             )}
 
+            {currentTab === 'scanner' && (
+              <ScannerView
+                students={students}
+                sessions={sessions}
+                onRecordAttendance={handleRecordAttendance}
+                onLogAuditEvent={logAuditEvent}
+              />
+            )}
+
             {currentTab === 'trainees' && (
               <TraineesView
                 students={students}
@@ -880,6 +973,15 @@ export function App() {
               <AlertsView alerts={alerts} onRefresh={loadData} />
             )}
 
+            {currentTab === 'analytics' && (
+              <AnalyticsView
+                students={students}
+                classes={classes}
+                sessions={sessions}
+                attendanceRecords={attendanceRecords}
+              />
+            )}
+
             {currentTab === 'messages' && (
               <MessagesView
                 conversations={conversations}
@@ -900,6 +1002,10 @@ export function App() {
 
             {currentTab === 'reports' && (
               <ReportsView classes={classes} students={students} />
+            )}
+
+            {currentTab === 'audit' && (
+              <AuditLogView events={auditEvents} />
             )}
           </SmoothScroll>
         </main>

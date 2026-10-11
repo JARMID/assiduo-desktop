@@ -123,6 +123,31 @@ class SoundFeedbackEngine {
     }
   }
 
+  public playWarning(): void {
+    if (!this.isEnabled) return;
+    try {
+      const ctx = this.getAudioContext();
+      if (!ctx) return;
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(329.63, ctx.currentTime);
+      osc.frequency.setValueAtTime(293.66, ctx.currentTime + 0.1);
+
+      gain.gain.setValueAtTime(0.04, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.2);
+
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+
+      osc.start();
+      osc.stop(ctx.currentTime + 0.2);
+    } catch {
+      // AudioContext unavailable
+    }
+  }
+
   public setEnabled(enabled: boolean): void {
     this.isEnabled = enabled;
   }
