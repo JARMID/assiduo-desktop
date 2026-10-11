@@ -129,11 +129,11 @@ export const JustificationsView: React.FC<JustificationsViewProps> = ({
           </div>
           <div>
             <BlurText
-              text="Vérification Intelligente des Certificats Médicaux"
+              text="Contrôle et Validation des Justificatifs"
               className="text-xs font-bold text-white"
             />
             <p className="text-[11px] text-slate-400 mt-0.5">
-              Contrôle optique automatique et détection d'intégrité documentaire
+              Contrôle de validité et vérification documentaire des absences
             </p>
           </div>
         </div>
@@ -158,7 +158,7 @@ export const JustificationsView: React.FC<JustificationsViewProps> = ({
                 <th className="py-3 px-4">Stagiaire</th>
                 <th className="py-3 px-4">Date Absence</th>
                 <th className="py-3 px-4">Motif Déclaré</th>
-                <th className="py-3 px-4 text-center">Score IA</th>
+                <th className="py-3 px-4 text-center">Conformité</th>
                 <th className="py-3 px-4 text-center">Statut</th>
                 <th className="py-3 px-4 text-right">Actions</th>
               </tr>
@@ -230,7 +230,7 @@ export const JustificationsView: React.FC<JustificationsViewProps> = ({
                         className="px-2.5 py-1 bg-[#1e2a40] hover:bg-[#273754] text-slate-300 hover:text-white rounded-md text-[11px] font-medium transition-colors cursor-pointer inline-flex items-center gap-1.5"
                       >
                         <Eye className="w-3 h-3 text-slate-400" />
-                        <span>Inspecter & IA</span>
+                        <span>Inspecter</span>
                       </button>
                     </td>
                   </tr>

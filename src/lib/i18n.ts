@@ -74,9 +74,9 @@ export const translations: Translations = {
     en: 'Sessions & Attendance',
   },
   navJustifications: {
-    fr: 'Justificatifs Médicaux',
-    ar: 'المبررات الطبية',
-    en: 'Medical Excuses',
+    fr: 'Justificatifs',
+    ar: 'المبررات',
+    en: 'Justifications',
   },
   navTrainees: {
     fr: 'Stagiaires & Effectifs',

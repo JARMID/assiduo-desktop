@@ -95,8 +95,8 @@ export const Header: React.FC<HeaderProps> = ({
         };
       case 'justifications':
         return {
-          title: language === 'ar' ? 'المبررات الطبية والإدارية' : language === 'en' ? 'Medical Justifications' : 'Justificatifs d Absence et Contrôle Médical',
-          subtitle: language === 'ar' ? 'الفحص والتأكد من صحة الشهادات الطبية والأختام' : language === 'en' ? 'Inspection and validation of medical certificates and official stamps' : 'Contrôle et validation des certificats médicaux et pièces justificatives',
+          title: language === 'ar' ? 'المبررات' : language === 'en' ? 'Justifications' : 'Justificatifs',
+          subtitle: language === 'ar' ? 'فحص وتأكيد الشهادات والوثائق التبريرية' : language === 'en' ? 'Review and validation of certificates and excuse documents' : 'Contrôle et validation des certificats et pièces justificatives',
         };
       case 'alerts':
         return {

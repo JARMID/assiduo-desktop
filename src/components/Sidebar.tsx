@@ -155,7 +155,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
     },
     {
       id: 'justifications' as NavigationTab,
-      label: language === 'ar' ? 'المبررات الطبية' : language === 'en' ? 'Medical Excuses' : 'Justificatifs Médicaux',
+      label: language === 'ar' ? 'المبررات' : language === 'en' ? 'Justifications' : 'Justificatifs',
       icon: FileCheck2,
       badge: pendingCount > 0 ? pendingCount : undefined,
       badgeColor: 'bg-amber-500/20 text-amber-300 border border-amber-500/30',
