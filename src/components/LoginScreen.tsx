@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Lock, Mail, AlertCircle, Loader2, WifiOff, School, Sun, Moon } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import { InsfpUser } from '../types';
-import { SpotlightCard, ShinyText, Magnet, DecryptedText, AnimatedContent } from './react-bits';
+import { SpotlightCard, ShinyText, Magnet, AnimatedContent } from './react-bits';
 import { useThemeLanguage } from '../context/ThemeLanguageContext';
 
 interface LoginScreenProps {
@@ -172,20 +172,13 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({ onLoginSuccess }) => {
             speed={5}
             className="text-2xl font-bold text-white tracking-wider"
           />
-          <div className="mt-1">
-            <DecryptedText
-              text={
-                language === 'ar'
-                  ? 'المنصة المركزية لتسيير ومتابعة الحضور'
-                  : language === 'en'
-                  ? 'Central Attendance Governance Platform'
-                  : 'Système Central de Présence & Assiduité'
-              }
-              speed={30}
-              maxIterations={12}
-              className="text-xs text-slate-400 font-sans"
-            />
-          </div>
+          <p className="text-xs text-slate-400 font-medium mt-1">
+            {language === 'ar'
+              ? 'المنصة المركزية لتسيير ومتابعة الحضور'
+              : language === 'en'
+              ? 'Central Attendance Governance Platform'
+              : 'Système Central de Présence & Assiduité'}
+          </p>
           <div className="mt-2.5 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#182235] border border-[#223049] text-[11px] text-slate-300 font-medium">
             <School className="w-3.5 h-3.5 text-blue-400" />
             <span>

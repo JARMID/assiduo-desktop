@@ -9,7 +9,6 @@ import {
   AlertTriangle,
   FileText,
   LogOut,
-  Radio,
   MessageSquare,
   Bell,
   BookOpen,
@@ -248,19 +247,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
             {isCollapsed ? <ChevronRight className="w-4 h-4" /> : <ChevronLeft className="w-4 h-4" />}
           </button>
         </div>
-
-        {/* Database Status Tag */}
-        {!isCollapsed && (
-          <div className="px-4 py-2 mx-3 mt-3 bg-[#162032] border border-[#223049] rounded-lg flex items-center justify-between text-[11px]">
-            <span className="text-slate-400 flex items-center gap-1.5">
-              <Radio className="w-3.5 h-3.5 text-emerald-400" />
-              Supabase Live
-            </span>
-            <span className="font-mono text-[10px] text-emerald-300 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800/40">
-              afwqtjmw
-            </span>
-          </div>
-        )}
 
         {/* Mode Alternator Switch */}
         {!isCollapsed && (

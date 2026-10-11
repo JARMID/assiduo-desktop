@@ -7,7 +7,6 @@ import {
   Smartphone,
   Sun,
   Moon,
-  CheckCircle2,
 } from 'lucide-react';
 import { NavigationTab } from './Sidebar';
 import { ShinyText, Magnet, BlurText } from './react-bits';
@@ -162,12 +161,6 @@ export const Header: React.FC<HeaderProps> = ({
 
       {/* Right Controls */}
       <div className="flex items-center gap-3">
-        {/* Sync Status Badge (Static calm checkmark, zero pulsating dots) */}
-        <div className="hidden lg:flex items-center gap-1.5 px-2.5 py-1 bg-[#141d2e] border border-[#202d45] rounded-lg text-[10px] text-emerald-400 font-mono">
-          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-          <span>{t('syncStatus')}</span>
-        </div>
-
         {/* Command Palette Trigger */}
         <Magnet padding={15} magnetStrength={0.15}>
           <button
@@ -184,7 +177,7 @@ export const Header: React.FC<HeaderProps> = ({
                 {language === 'ar' ? 'بحث سريع...' : language === 'en' ? 'Quick search...' : 'Recherche rapide...'}
               </span>
             </div>
-            <kbd className="px-1.5 py-0.5 rounded bg-[#101726] border border-[#263756] text-[10px] font-mono text-emerald-400 shrink-0">
+            <kbd className="px-1.5 py-0.5 rounded bg-[#101726] border border-[#263756] text-[10px] text-slate-400 shrink-0">
               Ctrl K
             </kbd>
           </button>

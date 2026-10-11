@@ -1,7 +1,7 @@
 import React from 'react';
 import { X, Printer, QrCode, ShieldCheck, School } from 'lucide-react';
 import { Student } from '../types';
-import { SpotlightCard, Magnet, ShinyText, DecryptedText } from './react-bits';
+import { SpotlightCard, Magnet, ShinyText } from './react-bits';
 import { sound } from '../lib/audioFeedback';
 
 interface StudentBadgeModalProps {
@@ -127,13 +127,8 @@ export const StudentBadgeModal: React.FC<StudentBadgeModalProps> = ({
                   <span className="text-slate-400 text-[8px] block uppercase tracking-wider">
                     Matricule National
                   </span>
-                  <div className="font-mono font-bold text-emerald-400 print:text-black">
-                    <DecryptedText
-                      text={student.matricule}
-                      speed={25}
-                      maxIterations={10}
-                      className="font-mono font-bold text-emerald-400 print:text-black"
-                    />
+                  <div className="font-mono font-bold text-slate-100 print:text-black">
+                    {student.matricule}
                   </div>
                 </div>
 
