@@ -1,0 +1,106 @@
+{
+  "project_info": {
+    "project_number": "211152404713",
+    "firebase_url": "https://apiuserhub-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "apiuserhub",
+    "storage_bucket": "apiuserhub.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:211152404713:android:cff047e6db97dcef657078",
+        "android_client_info": {
+          "package_name": "com.example.apiuserhub"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC099x-2IFLWRboEFH1tjK3mxnPKAIL904"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:211152404713:android:1b244d6ee398e0d2657078",
+        "android_client_info": {
+          "package_name": "com.yourpackage.ratemyrideapp.debug"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC099x-2IFLWRboEFH1tjK3mxnPKAIL904"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:211152404713:android:00a676eae411f432657078",
+        "android_client_info": {
+          "package_name": "dz.gov.insfp.admin_portal"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC099x-2IFLWRboEFH1tjK3mxnPKAIL904"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:211152404713:android:101619bbfd63a842657078",
+        "android_client_info": {
+          "package_name": "dz.gov.insfp.presence_insfp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC099x-2IFLWRboEFH1tjK3mxnPKAIL904"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:211152404713:android:c1b65bd1404ca5f6657078",
+        "android_client_info": {
+          "package_name": "dz.gov.insfp.student_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC099x-2IFLWRboEFH1tjK3mxnPKAIL904"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
