@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="title-mono-p">
+  <title id="title-mono-p">INSFP Presence - Modern Geometric 'P'</title>
+  <rect width="256" height="256" rx="56" fill="#090D16"/>
+  <g transform="translate(128,128)">
+    <!-- Primary Stem (Precision Attendance Pillar) -->
+    <rect x="-56" y="-68" width="24" height="136" rx="8" fill="#F59E0B"/>
+    <!-- Upper Horizontal Link -->
+    <rect x="-32" y="-68" width="56" height="24" rx="6" fill="#38BDF8"/>
+    <!-- Outer Curved Return -->
+    <path d="M24,-68 C56,-68 64,-44 64,-24 C64,-4 56,20 24,20 L-32,20 L-32,-4 L24,-4 C36,-4 40,-12 40,-24 C40,-36 36,-44 24,-44 Z" fill="#38BDF8"/>
+    <!-- Inner Precision Presence Indicator Dot -->
+    <circle cx="2" cy="-24" r="10" fill="#10B981"/>
+  </g>
+</svg>

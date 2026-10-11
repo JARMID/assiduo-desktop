@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="title-03">
+  <title id="title-03">INSFP Concept 03 - Clapperboard &amp; Verification Check</title>
+  <defs>
+    <linearGradient id="emerald3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34D399"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="gold3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="256" height="256" rx="48" fill="#0B111E"/>
+
+  <g transform="translate(128,128)">
+    <!-- Clapperboard Lower Slate Box -->
+    <rect x="-70" y="-10" width="140" height="90" rx="12" fill="#141E33" stroke="#22314E" stroke-width="4"/>
+
+    <!-- Slate Timecode & Sound Cue Lines -->
+    <line x1="-50" y1="20" x2="0" y2="20" stroke="#38BDF8" stroke-width="4" stroke-linecap="round"/>
+    <line x1="-50" y1="42" x2="20" y2="42" stroke="#475569" stroke-width="4" stroke-linecap="round"/>
+    <line x1="-50" y1="64" x2="-10" y2="64" stroke="#475569" stroke-width="4" stroke-linecap="round"/>
+
+    <!-- Pivoted Clapper Stick (Upper Stick) -->
+    <g transform="translate(-70,-10) rotate(-18)">
+      <rect x="0" y="-32" width="144" height="28" rx="6" fill="#0F172A" stroke="url(#gold3)" stroke-width="3"/>
+      <!-- Diagonal Chevrons on Upper Stick -->
+      <path d="M16,-30 L36,-30 L22,-6 L2,-6 Z" fill="url(#gold3)"/>
+      <path d="M52,-30 L72,-30 L58,-6 L38,-6 Z" fill="url(#gold3)"/>
+      <path d="M88,-30 L108,-30 L94,-6 L74,-6 Z" fill="url(#gold3)"/>
+      <path d="M124,-30 L140,-30 L130,-6 L114,-6 Z" fill="url(#gold3)"/>
+    </g>
+
+    <!-- Powerful Overlaid Presence Checkmark (Attendance Validation) -->
+    <circle cx="45" cy="40" r="38" fill="#0B111E" stroke="url(#emerald3)" stroke-width="5"/>
+    <path d="M28,40 L40,52 L64,28" fill="none" stroke="url(#emerald3)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="title-08">
+  <title id="title-08">INSFP Concept 08 - Acoustic Soundwave &amp; Academic Crest</title>
+  <defs>
+    <linearGradient id="gold8" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <linearGradient id="blue8" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="256" height="256" rx="48" fill="#0B111E"/>
+
+  <g transform="translate(128,128)">
+    <!-- Medallion Outer Contour -->
+    <circle cx="0" cy="0" r="96" fill="#141E33" stroke="#22314E" stroke-width="6"/>
+
+    <!-- Dual Symmetrical Acoustic Waves (Left and Right Sound Arrays) -->
+    <!-- Left Waves -->
+    <path d="M-40,-50 A64,64 0 0,0 -40,50" fill="none" stroke="url(#blue8)" stroke-width="5" stroke-linecap="round"/>
+    <path d="M-55,-65 A84,84 0 0,0 -55,65" fill="none" stroke="url(#gold8)" stroke-width="4" stroke-linecap="round"/>
+    <path d="M-25,-32 A42,42 0 0,0 -25,32" fill="none" stroke="#38BDF8" stroke-width="5" stroke-linecap="round"/>
+
+    <!-- Right Waves -->
+    <path d="M40,-50 A64,64 0 0,1 40,50" fill="none" stroke="url(#blue8)" stroke-width="5" stroke-linecap="round"/>
+    <path d="M55,-65 A84,84 0 0,1 55,65" fill="none" stroke="url(#gold8)" stroke-width="4" stroke-linecap="round"/>
+    <path d="M25,-32 A42,42 0 0,1 25,32" fill="none" stroke="#38BDF8" stroke-width="5" stroke-linecap="round"/>
+
+    <!-- Central Diamond Core -->
+    <polygon points="0,-42 34,0 0,42 -34,0" fill="#0B111E" stroke="url(#gold8)" stroke-width="4"/>
+
+    <!-- Institutional Presence Check Inside Core -->
+    <path d="M-10,0 L-3,7 L12,-8" fill="none" stroke="#10B981" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- Top & Bottom Anchor Pips -->
+    <circle cx="0" cy="-78" r="4" fill="#FBBF24"/>
+    <circle cx="0" cy="78" r="4" fill="#FBBF24"/>
+  </g>
+</svg>

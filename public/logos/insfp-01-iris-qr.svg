@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="title-01">
+  <title id="title-01">INSFP Concept 01 - Aperture Iris &amp; QR Core</title>
+  <defs>
+    <linearGradient id="goldGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <linearGradient id="blueGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+    <linearGradient id="emeraldGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34D399"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background base rounded card for container isolation -->
+  <rect width="256" height="256" rx="48" fill="#0B111E"/>
+  
+  <!-- Outer Technical Ring -->
+  <circle cx="128" cy="128" r="104" fill="none" stroke="#1E293B" stroke-width="4"/>
+  <circle cx="128" cy="128" r="98" fill="none" stroke="url(#goldGrad1)" stroke-width="3" stroke-dasharray="14 8"/>
+
+  <!-- Rotating Aperture Shutter Blades -->
+  <g transform="translate(128,128)">
+    <!-- Blade 1 -->
+    <path d="M0,-86 L48,-68 C30,-30 20,-10 20,0 L-40,0 Z" fill="url(#blueGrad1)" opacity="0.95"/>
+    <!-- Blade 2 -->
+    <path d="M0,-86 L48,-68 C30,-30 20,-10 20,0 L-40,0 Z" fill="url(#blueGrad1)" opacity="0.9" transform="rotate(60)"/>
+    <!-- Blade 3 -->
+    <path d="M0,-86 L48,-68 C30,-30 20,-10 20,0 L-40,0 Z" fill="url(#blueGrad1)" opacity="0.85" transform="rotate(120)"/>
+    <!-- Blade 4 -->
+    <path d="M0,-86 L48,-68 C30,-30 20,-10 20,0 L-40,0 Z" fill="url(#goldGrad1)" opacity="0.95" transform="rotate(180)"/>
+    <!-- Blade 5 -->
+    <path d="M0,-86 L48,-68 C30,-30 20,-10 20,0 L-40,0 Z" fill="url(#goldGrad1)" opacity="0.9" transform="rotate(240)"/>
+    <!-- Blade 6 -->
+    <path d="M0,-86 L48,-68 C30,-30 20,-10 20,0 L-40,0 Z" fill="url(#emeraldGrad1)" opacity="0.95" transform="rotate(300)"/>
+
+    <!-- Central QR Finder Presence Core -->
+    <rect x="-32" y="-32" width="64" height="64" rx="14" fill="#0B111E" stroke="url(#goldGrad1)" stroke-width="6"/>
+    <rect x="-18" y="-18" width="36" height="36" rx="8" fill="#141E33" stroke="url(#emeraldGrad1)" stroke-width="4"/>
+    <rect x="-8" y="-8" width="16" height="16" rx="4" fill="#38BDF8"/>
+  </g>
+</svg>

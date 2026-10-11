@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="title-07">
+  <title id="title-07">INSFP Concept 07 - Viewfinder Framing &amp; Scan Target</title>
+  <defs>
+    <linearGradient id="gold7" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <linearGradient id="cyan7" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="256" height="256" rx="48" fill="#0B111E"/>
+
+  <g transform="translate(128,128)">
+    <!-- 16:9 Cinematic Viewfinder Corner Brackets -->
+    <!-- Top-Left Bracket -->
+    <path d="M-84,-34 L-84,-64 A10,10 0 0,1 -74,-74 L-44,-74" fill="none" stroke="url(#gold7)" stroke-width="7" stroke-linecap="round"/>
+    <!-- Top-Right Bracket -->
+    <path d="M44,-74 L74,-74 A10,10 0 0,1 84,-64 L84,-34" fill="none" stroke="url(#gold7)" stroke-width="7" stroke-linecap="round"/>
+    <!-- Bottom-Right Bracket -->
+    <path d="M84,34 L84,64 A10,10 0 0,1 74,74 L44,74" fill="none" stroke="url(#gold7)" stroke-width="7" stroke-linecap="round"/>
+    <!-- Bottom-Left Bracket -->
+    <path d="M-44,74 L-74,74 A10,10 0 0,1 -84,64 L-84,34" fill="none" stroke="url(#gold7)" stroke-width="7" stroke-linecap="round"/>
+
+    <!-- Central Focusing Reticle & Crosshairs -->
+    <circle cx="0" cy="0" r="54" fill="#141E33" stroke="#22314E" stroke-width="3"/>
+    <circle cx="0" cy="0" r="42" fill="none" stroke="url(#cyan7)" stroke-width="2" stroke-dasharray="6 4"/>
+
+    <!-- Crosshair Pips -->
+    <line x1="-54" y1="0" x2="-28" y2="0" stroke="#38BDF8" stroke-width="3" stroke-linecap="round"/>
+    <line x1="28" y1="0" x2="54" y2="0" stroke="#38BDF8" stroke-width="3" stroke-linecap="round"/>
+    <line x1="0" y1="-54" x2="0" y2="-28" stroke="#38BDF8" stroke-width="3" stroke-linecap="round"/>
+    <line x1="0" y1="28" x2="0" y2="54" stroke="#38BDF8" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- Central QR Scan Anchor Block -->
+    <rect x="-14" y="-14" width="28" height="28" rx="6" fill="#0B111E" stroke="url(#gold7)" stroke-width="4"/>
+    <rect x="-6" y="-6" width="12" height="12" rx="3" fill="#10B981"/>
+  </g>
+</svg>

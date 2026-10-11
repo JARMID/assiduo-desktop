@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="title-09">
+  <title id="title-09">INSFP Concept 09 - Audiovisual Dynamic 'P' Monogram</title>
+  <defs>
+    <linearGradient id="pGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#EA580C"/>
+    </linearGradient>
+    <linearGradient id="pBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="256" height="256" rx="48" fill="#0B111E"/>
+
+  <g transform="translate(128,128)">
+    <!-- Vertical Stem of 'P': 35mm Film Ribbon Rail -->
+    <rect x="-60" y="-84" width="34" height="168" rx="10" fill="#141E33" stroke="#22314E" stroke-width="4"/>
+
+    <!-- Film Sprocket Holes along Stem -->
+    <rect x="-51" y="-68" width="16" height="12" rx="3" fill="#38BDF8"/>
+    <rect x="-51" y="-38" width="16" height="12" rx="3" fill="#38BDF8"/>
+    <rect x="-51" y="-8" width="16" height="12" rx="3" fill="#38BDF8"/>
+    <rect x="-51" y="22" width="16" height="12" rx="3" fill="#38BDF8"/>
+    <rect x="-51" y="52" width="16" height="12" rx="3" fill="#38BDF8"/>
+
+    <!-- Sweeping Upper Loop of 'P': Camera Shutter Wing -->
+    <path d="M-26,-84 L28,-84 C66,-84 76,-48 76,-24 C76,8 54,24 16,24 L-26,24 Z" fill="url(#pGold)"/>
+    
+    <!-- Negative Space Counter in 'P' Loop holding a Camera Lens / Iris Core -->
+    <ellipse cx="14" cy="-30" rx="24" ry="22" fill="#0B111E"/>
+    
+    <!-- Central Cyan Focus Dot -->
+    <circle cx="14" cy="-30" r="10" fill="#38BDF8"/>
+    <circle cx="14" cy="-30" r="4" fill="#FFFFFF"/>
+  </g>
+</svg>

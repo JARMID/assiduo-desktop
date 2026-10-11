@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="title-06">
+  <title id="title-06">INSFP Concept 06 - Chrono-Iris &amp; Timetable Dial</title>
+  <defs>
+    <linearGradient id="dialGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <linearGradient id="dialBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="256" height="256" rx="48" fill="#0B111E"/>
+
+  <g transform="translate(128,128)">
+    <!-- Outer Precision Bezel -->
+    <circle cx="0" cy="0" r="94" fill="none" stroke="#1E293B" stroke-width="6"/>
+
+    <!-- 12 Hour Ticks / Sector Marks -->
+    <g stroke="#334155" stroke-width="3" stroke-linecap="round">
+      <line x1="0" y1="-94" x2="0" y2="-82" stroke="#FBBF24" stroke-width="4"/>
+      <line x1="47" y1="-81" x2="41" y2="-71"/>
+      <line x1="81" y1="-47" x2="71" y2="-41"/>
+      <line x1="94" y1="0" x2="82" y2="0" stroke="#38BDF8" stroke-width="4"/>
+      <line x1="81" y1="47" x2="71" y2="41"/>
+      <line x1="47" y1="81" x2="41" y2="71"/>
+      <line x1="0" y1="94" x2="0" y2="82" stroke="#FBBF24" stroke-width="4"/>
+      <line x1="-47" y1="81" x2="-41" y2="71"/>
+      <line x1="-81" y1="47" x2="-71" y2="41"/>
+      <line x1="-94" y1="0" x2="-82" y2="0" stroke="#38BDF8" stroke-width="4"/>
+      <line x1="-81" y1="-47" x2="-71" y2="-41"/>
+      <line x1="-47" y1="-81" x2="-41" y2="-71"/>
+    </g>
+
+    <!-- Spiral Aperture Blades Interlocking into Clock Core -->
+    <!-- Blade Quadrants -->
+    <path d="M-60,-20 A64,64 0 0,1 20,-60 L30,-30 A34,34 0 0,0 -30,30 Z" fill="url(#dialBlue)" opacity="0.9"/>
+    <path d="M20,-60 A64,64 0 0,1 60,20 L30,30 A34,34 0 0,0 -20,-30 Z" fill="url(#dialBlue)" opacity="0.75" transform="rotate(90)"/>
+    <path d="M-60,-20 A64,64 0 0,1 20,-60 L30,-30 A34,34 0 0,0 -30,30 Z" fill="url(#dialGold)" opacity="0.9" transform="rotate(180)"/>
+    <path d="M20,-60 A64,64 0 0,1 60,20 L30,30 A34,34 0 0,0 -20,-30 Z" fill="url(#dialGold)" opacity="0.8" transform="rotate(270)"/>
+
+    <!-- Punctuality Hands: Pointing to 08:30 (Morning Start Session) -->
+    <line x1="0" y1="0" x2="-32" y2="-28" stroke="#FBBF24" stroke-width="5" stroke-linecap="round"/>
+    <line x1="0" y1="0" x2="0" y2="46" stroke="#38BDF8" stroke-width="4" stroke-linecap="round"/>
+    
+    <!-- Central Pivot -->
+    <circle cx="0" cy="0" r="9" fill="#0B111E" stroke="#FBBF24" stroke-width="3"/>
+    <circle cx="0" cy="0" r="3" fill="#10B981"/>
+  </g>
+</svg>

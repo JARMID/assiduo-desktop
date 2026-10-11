@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="title-05">
+  <title id="title-05">INSFP Concept 05 - Architectural Shield Monogram</title>
+  <defs>
+    <linearGradient id="shieldGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <linearGradient id="shieldBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#1E3A8A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="256" height="256" rx="48" fill="#0B111E"/>
+
+  <g transform="translate(128,128)">
+    <!-- Outer Shield Boundary -->
+    <path d="M0,-96 L76,-64 C76,20 48,72 0,96 C-48,72 -76,20 -76,-64 Z" fill="#141E33" stroke="#22314E" stroke-width="6"/>
+
+    <!-- Left Wing: Stylized Letter 'I' Pillar -->
+    <path d="M-56,-52 L-20,-36 L-20,44 C-36,28 -48,4 -56,-52 Z" fill="url(#shieldBlue)"/>
+
+    <!-- Right Wing: Stylized Loop of 'P' (Présence) -->
+    <path d="M20,-36 C50,-24 54,6 20,18 L20,-10 C32,-14 30,-22 20,-26 Z" fill="url(#shieldGold)"/>
+    <path d="M10,-48 L10,64 C28,48 44,22 56,-32 Z" fill="none" stroke="url(#shieldGold)" stroke-width="4"/>
+
+    <!-- Central Verification Star -->
+    <polygon points="0,-48 6,-32 22,-32 10,-22 14,-6 0,-16 -14,-6 -10,-22 -22,-32 -6,-32" fill="#FBBF24"/>
+
+    <!-- Lower Status Bar Check -->
+    <circle cx="0" cy="38" r="16" fill="#0B111E" stroke="#10B981" stroke-width="4"/>
+    <path d="M-6,38 L-2,42 L8,32" fill="none" stroke="#10B981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

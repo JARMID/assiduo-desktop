@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="title-02">
+  <title id="title-02">INSFP Concept 02 - Precision Gear &amp; Audio Waveform</title>
+  <defs>
+    <linearGradient id="gold2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <linearGradient id="cyan2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="256" height="256" rx="48" fill="#0B111E"/>
+
+  <g transform="translate(128,128)">
+    <!-- Upper Gear Arc (Golden Vocational Heritage) -->
+    <path d="M-92,0 A92,92 0 0,1 92,0 L108,0 L104,-22 L86,-24 A92,92 0 0,0 72,-56 L88,-70 L70,-88 L56,-72 A92,92 0 0,0 24,-86 L22,-104 L-22,-104 L-24,-86 A92,92 0 0,0 -56,-72 L-70,-88 L-88,-70 L-72,-56 A92,92 0 0,0 -86,-24 L-104,-22 L-108,0 Z" fill="url(#gold2)"/>
+
+    <!-- Lower Gear Arc (Midnight Precision Base) -->
+    <path d="M-92,0 A92,92 0 0,0 92,0 L108,0 L104,22 L86,24 A92,92 0 0,1 72,56 L88,70 L70,88 L56,72 A92,92 0 0,1 24,86 L22,104 L-22,104 L-24,86 A92,92 0 0,1 -56,72 L-70,88 L-88,70 L-72,56 A92,92 0 0,1 -86,24 L-104,22 L-108,0 Z" fill="#1E293B" stroke="#334155" stroke-width="2"/>
+
+    <!-- Inner Core Circle -->
+    <circle cx="0" cy="0" r="56" fill="#0F172A" stroke="url(#cyan2)" stroke-width="4"/>
+
+    <!-- Audio Waveform / Biometric Pulse Track crossing the center -->
+    <path d="M-72,0 L-36,0 L-24,-28 L-12,32 L0,-40 L12,28 L24,-14 L36,0 L72,0" fill="none" stroke="#38BDF8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Central Punctuality Center Dot -->
+    <circle cx="0" cy="-40" r="6" fill="#F59E0B"/>
+  </g>
+</svg>
