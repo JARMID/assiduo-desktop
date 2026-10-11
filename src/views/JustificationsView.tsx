@@ -133,7 +133,7 @@ export const JustificationsView: React.FC<JustificationsViewProps> = ({
               className="text-xs font-bold text-white"
             />
             <p className="text-[11px] text-slate-400 mt-0.5">
-              Propulsé par le modèle NVIDIA Llama 3.2 90B Vision Instruct
+              Contrôle optique automatique et détection d'intégrité documentaire
             </p>
           </div>
         </div>
@@ -289,7 +289,7 @@ export const JustificationsView: React.FC<JustificationsViewProps> = ({
                 <div>
                   <div className="text-xs font-semibold text-white flex items-center gap-1.5">
                     <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-                    <span>Lancer l'audit optique NVIDIA NIM Vision</span>
+                    <span>Lancer l'audit optique du certificat</span>
                   </div>
                   <div className="text-[10px] text-slate-400 mt-0.5">
                     Reconnaissance de texte OCR, détection du cachet et de la signature

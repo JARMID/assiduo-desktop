@@ -389,7 +389,7 @@ export const NotificationsView: React.FC<NotificationsViewProps> = ({
                       <div className="flex items-center gap-2">
                         <h4 className="text-xs font-bold text-white">{notif.title}</h4>
                         {!notif.is_read && (
-                          <span className="w-2 h-2 rounded-full bg-teal-400 animate-pulse" />
+                          <span className="w-2 h-2 rounded-full bg-teal-400" />
                         )}
                         <span
                           className={`text-[9px] font-bold px-2 py-0.5 rounded uppercase tracking-wider ${

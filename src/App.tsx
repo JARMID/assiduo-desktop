@@ -71,13 +71,13 @@ export function App() {
     },
     {
       id: 'audit-002',
-      actor_name: 'Système NVIDIA NIM',
+      actor_name: 'Contrôle Médical Automatisé',
       actor_role: 'SYSTEM',
       action_type: 'JUSTIFICATION',
       target: 'Student0 Test (2024010)',
       details: 'Vérification certificat médical: Score 92/100, authenticité confirmée',
       severity: 'INFO',
-      station: 'Service Vision IA',
+      station: 'Service de Validation Médicale',
       timestamp: '11/10/2026, 08:31:40',
     },
     {

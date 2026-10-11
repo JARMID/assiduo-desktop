@@ -161,7 +161,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
       },
       {
         id: 'nav-justifs',
-        title: 'Justificatifs & Certificats Médicaux (NVIDIA NIM)',
+        title: 'Justificatifs & Certificats Médicaux',
         category: 'NAVIGATION',
         shortcut: 'G J',
         icon: <FileCheck2 className="w-4 h-4 text-amber-400" />,

@@ -206,7 +206,7 @@ export const NewSessionModal: React.FC<NewSessionModalProps> = ({
           </div>
 
           <div className="p-3 bg-[#162032] border border-[#223049] rounded-xl flex items-center gap-2 text-[11px] text-emerald-400">
-            <Radio className="w-4 h-4 shrink-0 animate-pulse" />
+            <Radio className="w-4 h-4 shrink-0" />
             <span>La séance sera immédiatement accessible aux formateurs sur l'application mobile pour le scan QR.</span>
           </div>
 

@@ -128,7 +128,7 @@ export const SessionsView: React.FC<SessionsViewProps> = ({
 
         <div className="flex items-center gap-2">
           <span className="text-xs text-slate-400 font-mono flex items-center gap-1.5">
-            <Radio className="w-3.5 h-3.5 text-emerald-400 animate-pulse" />
+            <Radio className="w-3.5 h-3.5 text-emerald-400" />
             Créneaux INSFP officiels
           </span>
         </div>

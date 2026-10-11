@@ -18,6 +18,9 @@ import {
   ShieldCheck,
   PanelLeftClose,
   PanelLeft,
+  Sun,
+  Moon,
+  Globe,
 } from 'lucide-react';
 import {
   evaluatePasswordPolicy,
@@ -26,6 +29,7 @@ import {
 import { supabase } from '../lib/supabase';
 import { SpotlightCard, ShinyText, Magnet } from './react-bits';
 import { sound } from '../lib/audioFeedback';
+import { useThemeLanguage } from '../context/ThemeLanguageContext';
 
 interface SecuritySettingsModalProps {
   isOpen: boolean;
@@ -38,6 +42,7 @@ export const SecuritySettingsModal: React.FC<SecuritySettingsModalProps> = ({
   onClose,
   userEmail,
 }) => {
+  const { theme, setTheme, language, setLanguage, t } = useThemeLanguage();
   const [activeTab, setActiveTab] = useState<'SECURITY' | 'MODULES'>('SECURITY');
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -390,6 +395,116 @@ export const SecuritySettingsModal: React.FC<SecuritySettingsModalProps> = ({
         ) : (
           /* Content Tab: MODULES & PREFERENCES */
           <div className="p-6 space-y-5">
+            {/* Theme Mode Preference */}
+            <div className="p-4 rounded-xl bg-slate-950/60 border border-slate-800 flex items-center justify-between">
+              <div>
+                <div className="text-xs font-bold text-white uppercase tracking-wider flex items-center gap-1.5">
+                  <Sun className="w-3.5 h-3.5 text-amber-400" />
+                  <span>{language === 'ar' ? 'المظهر العام' : language === 'en' ? 'Interface Theme' : 'Thème Visuel'}</span>
+                </div>
+                <p className="text-[11px] text-slate-400 mt-0.5">
+                  {language === 'ar'
+                    ? 'التبديل بين الوضع الداكن والوضع الفاتح'
+                    : language === 'en'
+                    ? 'Switch between Dark and Light mode'
+                    : 'Alterner entre Mode Sombre institutionnel et Mode Clair'}
+                </p>
+              </div>
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => {
+                    sound.playClick();
+                    setTheme('dark');
+                  }}
+                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold border flex items-center gap-1.5 cursor-pointer transition-colors ${
+                    theme === 'dark'
+                      ? 'bg-blue-600/30 text-blue-300 border-blue-500/50'
+                      : 'bg-slate-800 text-slate-400 border-slate-700'
+                  }`}
+                >
+                  <Moon className="w-3.5 h-3.5 text-blue-400" />
+                  <span>{t('themeDark')}</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    sound.playClick();
+                    setTheme('light');
+                  }}
+                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold border flex items-center gap-1.5 cursor-pointer transition-colors ${
+                    theme === 'light'
+                      ? 'bg-amber-500/20 text-amber-300 border-amber-500/40'
+                      : 'bg-slate-800 text-slate-400 border-slate-700'
+                  }`}
+                >
+                  <Sun className="w-3.5 h-3.5 text-amber-400" />
+                  <span>{t('themeLight')}</span>
+                </button>
+              </div>
+            </div>
+
+            {/* Language Preference */}
+            <div className="p-4 rounded-xl bg-slate-950/60 border border-slate-800 flex items-center justify-between">
+              <div>
+                <div className="text-xs font-bold text-white uppercase tracking-wider flex items-center gap-1.5">
+                  <Globe className="w-3.5 h-3.5 text-blue-400" />
+                  <span>{t('language')}</span>
+                </div>
+                <p className="text-[11px] text-slate-400 mt-0.5">
+                  {language === 'ar'
+                    ? 'اللغة الرسمية لواجهة التطبيق'
+                    : language === 'en'
+                    ? 'Official portal display language'
+                    : 'Langue officielle d\'affichage du portail'}
+                </p>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <button
+                  type="button"
+                  onClick={() => {
+                    sound.playClick();
+                    setLanguage('fr');
+                  }}
+                  className={`px-2.5 py-1.5 rounded-lg text-xs font-semibold border cursor-pointer transition-colors ${
+                    language === 'fr'
+                      ? 'bg-blue-600 text-white border-blue-500'
+                      : 'bg-slate-800 text-slate-400 border-slate-700'
+                  }`}
+                >
+                  Français
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    sound.playClick();
+                    setLanguage('ar');
+                  }}
+                  className={`px-2.5 py-1.5 rounded-lg text-xs font-semibold border cursor-pointer transition-colors font-sans ${
+                    language === 'ar'
+                      ? 'bg-blue-600 text-white border-blue-500'
+                      : 'bg-slate-800 text-slate-400 border-slate-700'
+                  }`}
+                >
+                  العربية
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    sound.playClick();
+                    setLanguage('en');
+                  }}
+                  className={`px-2.5 py-1.5 rounded-lg text-xs font-semibold border cursor-pointer transition-colors ${
+                    language === 'en'
+                      ? 'bg-blue-600 text-white border-blue-500'
+                      : 'bg-slate-800 text-slate-400 border-slate-700'
+                  }`}
+                >
+                  English
+                </button>
+              </div>
+            </div>
+
             {/* Toggle Modules Optionnels */}
             <div className="p-4 rounded-xl bg-slate-950/60 border border-slate-800 space-y-3">
               <div className="flex items-center justify-between">

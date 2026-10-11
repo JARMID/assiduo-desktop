@@ -288,7 +288,7 @@ export const TraineesView: React.FC<TraineesViewProps> = ({
         </div>
       </AnimatedContent>
 
-      {/* Trainee Detail Modal with NVIDIA NIM Reasoning */}
+      {/* Trainee Detail Modal with Predictive Risk Engine */}
       {selectedStudent && (
         <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-xs flex items-center justify-center p-4">
           <SpotlightCard
@@ -383,12 +383,12 @@ export const TraineesView: React.FC<TraineesViewProps> = ({
               </div>
             </div>
 
-            {/* NVIDIA NIM Risk Assessment Engine */}
+            {/* Predictive Risk Assessment Engine */}
             <div className="pt-4">
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-1.5 text-xs font-semibold text-white">
                   <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-                  <span>Évaluation Prédictive d'Abandon (NVIDIA NIM)</span>
+                  <span>Évaluation Prédictive du Risque d'Abandon</span>
                 </div>
                 {!aiRiskResult && (
                   <button

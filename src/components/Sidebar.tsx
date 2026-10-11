@@ -24,6 +24,7 @@ import {
 } from 'lucide-react';
 import { InsfpUser } from '../types';
 import { ShinyText, Magnet } from './react-bits';
+import { useThemeLanguage } from '../context/ThemeLanguageContext';
 
 export type NavigationTab =
   | 'dashboard'
@@ -62,6 +63,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
   unreadMessagesCount = 0,
   unreadNotificationsCount = 0,
 }) => {
+  const { language, t } = useThemeLanguage();
   const [showOptionalModules, setShowOptionalModules] = useState<boolean>(() => {
     try {
       return localStorage.getItem('assiduo_show_optional_modules') !== 'false';
@@ -123,65 +125,65 @@ export const Sidebar: React.FC<SidebarProps> = ({
   const coreNavItems = [
     {
       id: 'dashboard' as NavigationTab,
-      label: 'Tableau de bord',
+      label: t('navDashboard'),
       icon: LayoutDashboard,
     },
     {
       id: 'trainees' as NavigationTab,
-      label: 'Stagiaires',
+      label: language === 'ar' ? 'المتربصون' : language === 'en' ? 'Students' : 'Stagiaires',
       icon: GraduationCap,
     },
     {
       id: 'instructors' as NavigationTab,
-      label: 'Formateurs',
+      label: language === 'ar' ? 'الأساتذة' : language === 'en' ? 'Instructors' : 'Formateurs',
       icon: Users,
     },
     {
       id: 'classes' as NavigationTab,
-      label: 'Classes & Sections',
+      label: language === 'ar' ? 'الأقسام' : language === 'en' ? 'Classes' : 'Classes & Sections',
       icon: School,
     },
     {
       id: 'specialities' as NavigationTab,
-      label: 'Filières & Spécialités',
+      label: language === 'ar' ? 'الشعب والتخصصات' : language === 'en' ? 'Specialties' : 'Filières & Spécialités',
       icon: BookOpen,
     },
     {
       id: 'sessions' as NavigationTab,
-      label: 'Séances & Émargement',
+      label: language === 'ar' ? 'الحصص والإمضاء' : language === 'en' ? 'Sessions' : 'Séances & Émargement',
       icon: Clock,
     },
     {
       id: 'justifications' as NavigationTab,
-      label: 'Justificatifs & IA',
+      label: language === 'ar' ? 'المبررات الطبية' : language === 'en' ? 'Medical Excuses' : 'Justificatifs Médicaux',
       icon: FileCheck2,
       badge: pendingCount > 0 ? pendingCount : undefined,
       badgeColor: 'bg-amber-500/20 text-amber-300 border border-amber-500/30',
     },
     {
       id: 'alerts' as NavigationTab,
-      label: 'Alertes Absence',
+      label: language === 'ar' ? 'تنبيهات الغياب' : language === 'en' ? 'Attendance Alerts' : 'Alertes Absence',
       icon: AlertTriangle,
       badge: alertCount > 0 ? alertCount : undefined,
       badgeColor: 'bg-red-500/20 text-red-300 border border-red-500/30',
     },
     {
       id: 'messages' as NavigationTab,
-      label: 'Messagerie',
+      label: language === 'ar' ? 'الرسائل' : language === 'en' ? 'Messages' : 'Messagerie',
       icon: MessageSquare,
       badge: unreadMessagesCount > 0 ? unreadMessagesCount : undefined,
       badgeColor: 'bg-blue-500/20 text-blue-300 border border-blue-500/30',
     },
     {
       id: 'notifications' as NavigationTab,
-      label: 'Communications',
+      label: language === 'ar' ? 'الإعلانات' : language === 'en' ? 'Announcements' : 'Communications',
       icon: Bell,
       badge: unreadNotificationsCount > 0 ? unreadNotificationsCount : undefined,
       badgeColor: 'bg-teal-500/20 text-teal-300 border border-teal-500/30',
     },
     {
       id: 'reports' as NavigationTab,
-      label: 'Registres & Export',
+      label: language === 'ar' ? 'السجلات الرسمية' : language === 'en' ? 'Registers & Export' : 'Registres & Export',
       icon: FileText,
     },
   ];
@@ -189,23 +191,23 @@ export const Sidebar: React.FC<SidebarProps> = ({
   const optionalNavItems = [
     {
       id: 'scanner' as NavigationTab,
-      label: 'Guichet Émargement',
+      label: language === 'ar' ? 'شباك التأشير' : language === 'en' ? 'Check-in Desk' : 'Guichet Émargement',
       icon: Scan,
-      badge: 'Optionnel',
+      badge: language === 'ar' ? 'إضافي' : language === 'en' ? 'Optional' : 'Optionnel',
       badgeColor: 'bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 text-[9px]',
     },
     {
       id: 'analytics' as NavigationTab,
-      label: 'Analytique & Risque',
+      label: language === 'ar' ? 'التحليلات وخطر الانقطاع' : language === 'en' ? 'Analytics & Risk' : 'Analytique & Risque',
       icon: TrendingUp,
-      badge: 'Optionnel',
+      badge: language === 'ar' ? 'إضافي' : language === 'en' ? 'Optional' : 'Optionnel',
       badgeColor: 'bg-purple-500/10 text-purple-300 border border-purple-500/20 text-[9px]',
     },
     {
       id: 'audit' as NavigationTab,
-      label: "Journal d'Audit",
+      label: language === 'ar' ? 'سجل التدقيق' : language === 'en' ? 'Audit Log' : "Journal d'Audit",
       icon: ShieldCheck,
-      badge: 'Optionnel',
+      badge: language === 'ar' ? 'إضافي' : language === 'en' ? 'Optional' : 'Optionnel',
       badgeColor: 'bg-blue-500/10 text-blue-300 border border-blue-500/20 text-[9px]',
     },
   ];
@@ -231,8 +233,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   speed={6}
                   className="text-sm font-bold tracking-wider text-white truncate"
                 />
-                <div className="text-[10px] font-medium text-emerald-400 flex items-center gap-1.5 truncate">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
+                <div className="text-[10px] font-medium text-slate-400 truncate">
                   INSFP Ouled Fayet
                 </div>
               </div>
@@ -266,19 +267,51 @@ export const Sidebar: React.FC<SidebarProps> = ({
           <div className="flex items-center justify-between px-3 py-1.5 mx-3 mt-2 bg-[#141d2e] border border-[#1f2c42] rounded-lg text-[11px]">
             <div className="flex items-center gap-1.5 text-slate-300 font-medium">
               <SlidersHorizontal className="w-3.5 h-3.5 text-blue-400" />
-              <span>{showOptionalModules ? 'Mode Campus Avancé' : 'Mode Standard'}</span>
+              <span>
+                {showOptionalModules
+                  ? language === 'ar'
+                    ? 'وضع الحرم الجامعي'
+                    : language === 'en'
+                    ? 'Campus Mode'
+                    : 'Mode Campus Avancé'
+                  : language === 'ar'
+                  ? 'الوضع القياسي'
+                  : language === 'en'
+                  ? 'Standard Mode'
+                  : 'Mode Standard'}
+              </span>
             </div>
             <button
               onClick={toggleOptionalModules}
               title={
                 showOptionalModules
-                  ? 'Masquer les modules optionnels'
+                  ? language === 'ar'
+                    ? 'إخفاء الوحدات الإضافية'
+                    : language === 'en'
+                    ? 'Hide optional modules'
+                    : 'Masquer les modules optionnels'
+                  : language === 'ar'
+                  ? 'إظهار الوحدات الإضافية'
+                  : language === 'en'
+                  ? 'Show optional modules'
                   : 'Afficher les modules optionnels'
               }
               className="px-2 py-0.5 rounded text-[10px] font-semibold flex items-center gap-1 cursor-pointer transition-colors bg-blue-500/15 hover:bg-blue-500/25 text-blue-300 border border-blue-500/30"
             >
               {showOptionalModules ? <EyeOff className="w-3 h-3" /> : <Eye className="w-3 h-3" />}
-              <span>{showOptionalModules ? 'Masquer' : 'Afficher'}</span>
+              <span>
+                {showOptionalModules
+                  ? language === 'ar'
+                    ? 'إخفاء'
+                    : language === 'en'
+                    ? 'Hide'
+                    : 'Masquer'
+                  : language === 'ar'
+                  ? 'إظهار'
+                  : language === 'en'
+                  ? 'Show'
+                  : 'Afficher'}
+              </span>
             </button>
           </div>
         )}
@@ -288,7 +321,11 @@ export const Sidebar: React.FC<SidebarProps> = ({
           {/* Core Modules */}
           {!isCollapsed && (
             <div className="px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-slate-400">
-              Gestion Pédagogique
+              {language === 'ar'
+                ? 'التسيير البيداغوجي'
+                : language === 'en'
+                ? 'Academic Management'
+                : 'Gestion Pédagogique'}
             </div>
           )}
 
@@ -334,13 +371,27 @@ export const Sidebar: React.FC<SidebarProps> = ({
           <div className="pt-3">
             {!isCollapsed ? (
               <div className="px-2 py-1 flex items-center justify-between text-[10px] font-bold uppercase tracking-wider text-slate-400">
-                <span>Modules Campus (Optionnels)</span>
+                <span>
+                  {language === 'ar'
+                    ? 'وحدات إضافية'
+                    : language === 'en'
+                    ? 'Optional Modules'
+                    : 'Modules Campus (Optionnels)'}
+                </span>
                 <button
                   onClick={toggleOptionalModules}
                   className="p-1 hover:text-white text-slate-400 rounded transition-colors cursor-pointer"
                   title={
                     showOptionalModules
-                      ? 'Masquer les modules optionnels'
+                      ? language === 'ar'
+                        ? 'إخفاء الوحدات الإضافية'
+                        : language === 'en'
+                        ? 'Hide optional modules'
+                        : 'Masquer les modules optionnels'
+                      : language === 'ar'
+                      ? 'إظهار الوحدات الإضافية'
+                      : language === 'en'
+                      ? 'Show optional modules'
                       : 'Afficher les modules optionnels'
                   }
                 >
@@ -391,12 +442,18 @@ export const Sidebar: React.FC<SidebarProps> = ({
             ) : (
               !isCollapsed && (
                 <div className="px-3 py-2 rounded-lg bg-[#141d2e]/60 border border-dashed border-[#23314a] flex items-center justify-between text-[11px] text-slate-400">
-                  <span>3 modules masqués</span>
+                  <span>
+                    {language === 'ar'
+                      ? '3 وحدات مخفية'
+                      : language === 'en'
+                      ? '3 modules hidden'
+                      : '3 modules masqués'}
+                  </span>
                   <button
                     onClick={toggleOptionalModules}
                     className="text-emerald-400 hover:text-emerald-300 font-semibold text-[10px] cursor-pointer"
                   >
-                    Afficher
+                    {language === 'ar' ? 'إظهار' : language === 'en' ? 'Show' : 'Afficher'}
                   </button>
                 </div>
               )

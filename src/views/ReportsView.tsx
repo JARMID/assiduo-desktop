@@ -240,7 +240,7 @@ export const ReportsView: React.FC<ReportsViewProps> = ({ classes, students }) =
           <div className="flex items-center gap-3 text-right">
             <div>
               <div className="text-[11px] font-black tracking-wider text-slate-900">ASSIDUO</div>
-              <div className="text-[9px] text-emerald-700 font-semibold font-mono">v2.0 Certifié</div>
+              <div className="text-[9px] text-emerald-700 font-semibold font-mono">Certifié Conforme</div>
               <div className="text-[8px] text-slate-500 font-mono">ID: {verificationHash}</div>
             </div>
             <img
@@ -353,7 +353,7 @@ export const ReportsView: React.FC<ReportsViewProps> = ({ classes, students }) =
         {/* Regulatory & Security Compliance Seal */}
         <div className="mt-6 pt-3 border-t border-slate-300 flex items-center justify-between text-[9px] text-slate-500 font-mono">
           <div>
-            Document réglementaire officiel généré numériquement via Assiduo Desktop v2.0 • INSFP Ouled Fayet
+            Document réglementaire officiel généré numériquement via Assiduo • INSFP Ouled Fayet
           </div>
           <div>
             Empreinte d'intégrité : <span className="font-bold text-slate-700">{verificationHash}</span> • Conforme Décret Exécutif n° 18-162 & Algorithme k-Anonymat k=5

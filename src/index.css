@@ -21,6 +21,79 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   user-select: none;
   overflow: hidden;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Light Mode Overrides */
+html.light body {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+html.light .bg-\[\#0b0f17\],
+html.light .bg-\[\#0b0f19\] {
+  background-color: #f8fafc !important;
+}
+
+html.light .bg-\[\#111724\],
+html.light .bg-\[\#141d2e\],
+html.light .bg-\[\#162133\] {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+
+html.light .bg-\[\#182235\],
+html.light .bg-\[\#1a2336\] {
+  background-color: #f1f5f9 !important;
+}
+
+html.light .border-\[\#1f293d\],
+html.light .border-\[\#1f2c42\],
+html.light .border-\[\#202d45\],
+html.light .border-\[\#223049\],
+html.light .border-\[\#24334f\] {
+  border-color: #e2e8f0 !important;
+}
+
+html.light .text-white {
+  color: #0f172a !important;
+}
+
+html.light .text-slate-200,
+html.light .text-slate-300 {
+  color: #334155 !important;
+}
+
+html.light .text-slate-400 {
+  color: #64748b !important;
+}
+
+html.light input,
+html.light select,
+html.light textarea {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+html.light .hover\:bg-\[\#202d45\]:hover,
+html.light .hover\:bg-\[\#1e293b\]:hover {
+  background-color: #e2e8f0 !important;
+}
+
+/* RTL Support for Arabic */
+[dir="rtl"] {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .font-mono,
+[dir="rtl"] input[type="time"],
+[dir="rtl"] input[type="number"],
+[dir="rtl"] .ltr-preserve {
+  direction: ltr !important;
+  text-align: left !important;
+  unicode-bidi: embed;
 }
 
 @keyframes shine {
@@ -51,8 +124,16 @@ body {
   border-radius: 3px;
 }
 
+html.light ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+
 ::-webkit-scrollbar-thumb:hover {
   background: #334155;
+}
+
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
 }
 
 @media print {

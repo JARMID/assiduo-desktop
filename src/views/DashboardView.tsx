@@ -110,7 +110,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             </div>
             <div className="text-[10px] text-amber-300/80 mt-1 flex items-center gap-1">
               <Sparkles className="w-3 h-3 text-amber-400" />
-              <span>Audit NVIDIA NIM disponible</span>
+              <span>Contrôle documentaire prêt</span>
             </div>
           </div>
           <div className="w-11 h-11 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
@@ -128,7 +128,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         >
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-2">
-              <Radio className="w-4 h-4 text-emerald-400 animate-pulse" />
+              <Radio className="w-4 h-4 text-emerald-400" />
               <BlurText text="Séances Pédagogiques en Cours" className="text-sm font-bold text-white" />
             </div>
             <Magnet padding={15} magnetStrength={0.2}>
