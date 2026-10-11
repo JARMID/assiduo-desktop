@@ -116,4 +116,88 @@ describe('Enterprise Campus Features Suite', () => {
       expect(avg).toBeCloseTo(82.5, 1);
     });
   });
+
+  describe('Badge QR and Barcode Payload Decoding', () => {
+    const parseBadgeCode = (rawCode: string) => {
+      const code = rawCode.trim();
+      if (code.startsWith('{') && code.endsWith('}')) {
+        try {
+          const parsed = JSON.parse(code);
+          return parsed.matricule || code;
+        } catch {
+          return code;
+        }
+      }
+      return code;
+    };
+
+    it('Parses plain text matricules cleanly', () => {
+      expect(parseBadgeCode('DEV-2025-014')).toBe('DEV-2025-014');
+      expect(parseBadgeCode('  RES-2025-089  ')).toBe('RES-2025-089');
+    });
+
+    it('Extracts matricule from serialized student mobile badge JSON', () => {
+      const payload = JSON.stringify({
+        matricule: 'DEV-2025-014',
+        name: 'Benali Karim',
+        section: 'DEV-WEB-2',
+      });
+      expect(parseBadgeCode(payload)).toBe('DEV-2025-014');
+    });
+
+    it('Falls back safely on malformed JSON payload', () => {
+      const broken = '{"matricule": broken';
+      expect(parseBadgeCode(broken)).toBe(broken);
+    });
+  });
+
+  describe('Module Visibility & Alternator Settings Serialization', () => {
+    it('Correctly serializes and parses optional module state', () => {
+      const serialize = (val: boolean) => String(val);
+      const deserialize = (val: string | null) => val !== 'false';
+
+      expect(deserialize(serialize(true))).toBe(true);
+      expect(deserialize(serialize(false))).toBe(false);
+      expect(deserialize(null)).toBe(true); // Default is visible
+    });
+
+    it('Correctly serializes and parses sidebar collapse state', () => {
+      const serialize = (val: boolean) => String(val);
+      const deserialize = (val: string | null) => val === 'true';
+
+      expect(deserialize(serialize(true))).toBe(true);
+      expect(deserialize(serialize(false))).toBe(false);
+      expect(deserialize(null)).toBe(false); // Default is expanded
+    });
+  });
+
+  describe('Algerian Vocational Training Regulatory Absence Thresholds', () => {
+    const evaluateStudentStatus = (unjustifiedHours: number, attendanceRate: number) => {
+      if (attendanceRate < 75 || unjustifiedHours >= 20) {
+        return { tier: 'EXCLUSION', action: 'Conseil de discipline' };
+      }
+      if (unjustifiedHours >= 10) {
+        return { tier: 'MISE_EN_DEMEURE', action: 'Convocation tuteur légal' };
+      }
+      if (unjustifiedHours >= 3) {
+        return { tier: 'AVERTISSEMENT', action: 'Notification administrative' };
+      }
+      return { tier: 'REGULIER', action: 'Suivi normal' };
+    };
+
+    it('Triggers warning at 3 unjustified hours', () => {
+      const res = evaluateStudentStatus(4, 96.0);
+      expect(res.tier).toBe('AVERTISSEMENT');
+    });
+
+    it('Triggers formal summons (Mise en demeure) at 10 unjustified hours', () => {
+      const res = evaluateStudentStatus(12, 88.0);
+      expect(res.tier).toBe('MISE_EN_DEMEURE');
+    });
+
+    it('Triggers disciplinary exclusion when attendance drops below 75 percent', () => {
+      const res = evaluateStudentStatus(15, 71.5);
+      expect(res.tier).toBe('EXCLUSION');
+    });
+  });
 });
