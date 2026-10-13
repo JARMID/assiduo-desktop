@@ -27,3 +27,10 @@ dist-ssr
 src-tauri/target/
 src-tauri/gen/
 target/
+
+# Agents and local skills
+.agents/skills/
+.claude/skills/
+.cursor/skills/
+.gemini/skills/
+.opencode/skills/
