@@ -42,6 +42,7 @@ export function App() {
   const [currentTab, setCurrentTab] = useState<NavigationTab>('dashboard');
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [isSecurityModalOpen, setIsSecurityModalOpen] = useState(false);
+  const [securityModalTab, setSecurityModalTab] = useState<'SECURITY' | 'MODULES' | 'GUIDE'>('SECURITY');
   const [isCommandPaletteOpen, setIsCommandPaletteOpen] = useState(false);
   const [isDownloadAppsModalOpen, setIsDownloadAppsModalOpen] = useState(false);
   const [directContactStudentId, setDirectContactStudentId] = useState<string | null>(null);
@@ -732,9 +733,29 @@ export function App() {
     }
   }, []);
 
-  // Global Keyboard Navigation (Ctrl+K, F5/Ctrl+R, Esc, Alt+1..8)
+  const handleOpenSecurity = useCallback(() => {
+    sound.playClick();
+    setSecurityModalTab('SECURITY');
+    setIsSecurityModalOpen(true);
+  }, []);
+
+  const handleOpenGuide = useCallback(() => {
+    sound.playClick();
+    setSecurityModalTab('GUIDE');
+    setIsSecurityModalOpen(true);
+  }, []);
+
+  // Global Keyboard Navigation (F1, Ctrl+K, F5/Ctrl+R, Esc, Alt+1..9)
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
+      // F1: Open User Guide & Regulatory System Manual
+      if (e.key === 'F1') {
+        e.preventDefault();
+        sound.playClick();
+        setSecurityModalTab('GUIDE');
+        setIsSecurityModalOpen(true);
+        return;
+      }
       // Ctrl+K: Command Palette
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
         e.preventDefault();
@@ -903,7 +924,8 @@ export function App() {
           currentTab={currentTab}
           onRefresh={loadData}
           isRefreshing={isRefreshing}
-          onOpenSecurity={() => setIsSecurityModalOpen(true)}
+          onOpenSecurity={handleOpenSecurity}
+          onOpenGuide={handleOpenGuide}
           onOpenCommandPalette={() => setIsCommandPaletteOpen(true)}
           onOpenDownloadApps={() => setIsDownloadAppsModalOpen(true)}
         />
@@ -1016,6 +1038,7 @@ export function App() {
         isOpen={isSecurityModalOpen}
         onClose={() => setIsSecurityModalOpen(false)}
         userEmail={currentUser?.email || 'admin@insfp.dz'}
+        initialTab={securityModalTab}
       />
 
       {/* Download Mobile Apps QR & APK Modal */}
@@ -1033,7 +1056,8 @@ export function App() {
         onOpenBulkImport={() => setCurrentTab('trainees')}
         onOpenNewClass={() => setCurrentTab('classes')}
         onOpenNewSession={() => setCurrentTab('sessions')}
-        onOpenSecurity={() => setIsSecurityModalOpen(true)}
+        onOpenSecurity={handleOpenSecurity}
+        onOpenGuide={handleOpenGuide}
         onOpenDownloadApps={() => setIsDownloadAppsModalOpen(true)}
         onSelectStudent={() => setCurrentTab('trainees')}
         students={students}
