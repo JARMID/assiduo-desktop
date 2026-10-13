@@ -161,7 +161,7 @@ export const AuditLogView: React.FC<AuditLogViewProps> = ({ events }) => {
         </SpotlightCard>
 
         <SpotlightCard
-          spotlightColor="rgba(16, 185, 129, 0.15)"
+          spotlightColor="rgba(160, 185, 129, 0.15)"
           className="p-4 bg-[#141d2e] border border-[#1f2c42] rounded-xl"
         >
           <div className="text-[11px] text-slate-400 font-medium">Pointages & Émargements</div>
@@ -179,18 +179,18 @@ export const AuditLogView: React.FC<AuditLogViewProps> = ({ events }) => {
           <div className="text-2xl font-bold text-amber-400 mt-1 font-mono">
             <CountUp to={events.filter((e) => e.action_type === 'JUSTIFICATION').length} duration={0.8} />
           </div>
-          <div className="text-[10px] text-amber-300/80 mt-1">Audits médicaux assistés IA</div>
+          <div className="text-[10px] text-amber-300/80 mt-1">Conformité et validation des pièces</div>
         </SpotlightCard>
 
         <SpotlightCard
-          spotlightColor="rgba(168, 85, 247, 0.15)"
+          spotlightColor="rgba(99, 102, 241, 0.15)"
           className="p-4 bg-[#141d2e] border border-[#1f2c42] rounded-xl"
         >
           <div className="text-[11px] text-slate-400 font-medium">Actions Sensibles / Sécurité</div>
-          <div className="text-2xl font-bold text-purple-400 mt-1 font-mono">
+          <div className="text-2xl font-bold text-slate-100 mt-1 font-mono">
             <CountUp to={events.filter((e) => e.action_type === 'SECURITY').length} duration={0.8} />
           </div>
-          <div className="text-[10px] text-purple-300/80 mt-1">Mots de passe & politiques</div>
+          <div className="text-[10px] text-slate-400 mt-1">Mots de passe & politiques</div>
         </SpotlightCard>
       </AnimatedContent>
 
