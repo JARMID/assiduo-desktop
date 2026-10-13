@@ -28,9 +28,12 @@ src-tauri/target/
 src-tauri/gen/
 target/
 
-# Agents and local skills
-.agents/skills/
-.claude/skills/
-.cursor/skills/
-.gemini/skills/
-.opencode/skills/
+# Agent harnesses and local skill engines
+.agent/
+.agents/
+.claude/
+.codex/
+.cursor/
+.gemini/
+.opencode/
+skills-lock.json
