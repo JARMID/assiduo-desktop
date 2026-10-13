@@ -161,7 +161,7 @@ export const AuditLogView: React.FC<AuditLogViewProps> = ({ events }) => {
         </SpotlightCard>
 
         <SpotlightCard
-          spotlightColor="rgba(160, 185, 129, 0.15)"
+          spotlightColor="rgba(16, 185, 129, 0.15)"
           className="p-4 bg-[#141d2e] border border-[#1f2c42] rounded-xl"
         >
           <div className="text-[11px] text-slate-400 font-medium">Pointages & Émargements</div>

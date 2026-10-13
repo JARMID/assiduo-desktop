@@ -237,7 +237,8 @@ export const MessagesView: React.FC<MessagesViewProps> = ({
   const handleCreateConversation = async (e: React.FormEvent) => {
     e.preventDefault();
     setModalError(null);
-  if (!selectedStudentId) {
+
+    if (!selectedStudentId) {
       setModalError('Veuillez sélectionner un stagiaire destinataire.');
       return;
     }
