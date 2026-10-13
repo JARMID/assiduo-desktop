@@ -7,6 +7,7 @@ import {
   Smartphone,
   Sun,
   Moon,
+  BookOpen,
 } from 'lucide-react';
 import { NavigationTab } from './Sidebar';
 import { ShinyText, Magnet, BlurText } from './react-bits';
@@ -20,6 +21,7 @@ interface HeaderProps {
   onOpenSecurity?: () => void;
   onOpenCommandPalette?: () => void;
   onOpenDownloadApps?: () => void;
+  onOpenGuide?: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -29,6 +31,7 @@ export const Header: React.FC<HeaderProps> = ({
   onOpenSecurity,
   onOpenCommandPalette,
   onOpenDownloadApps,
+  onOpenGuide,
 }) => {
   const { theme, toggleTheme, language, setLanguage, t } = useThemeLanguage();
   const [timeString, setTimeString] = useState('');
@@ -288,6 +291,28 @@ export const Header: React.FC<HeaderProps> = ({
           </Magnet>
         )}
 
+        {/* Guide d'utilisation & Manuel Système Button */}
+        {onOpenGuide && (
+          <Magnet padding={10} magnetStrength={0.25}>
+            <button
+              onClick={() => {
+                sound.playClick();
+                onOpenGuide();
+              }}
+              title={
+                language === 'ar'
+                  ? 'دليل الاستخدام والمخطط التنظيمي (F1)'
+                  : language === 'en'
+                  ? 'User Guide & Regulatory System Manual (F1)'
+                  : 'Guide d\'utilisation & Manuel Système (F1)'
+              }
+              className="p-2 bg-[#182235] hover:bg-[#202d45] border border-indigo-500/30 rounded-lg text-indigo-400 hover:text-indigo-300 transition-colors cursor-pointer"
+            >
+              <BookOpen className="w-4 h-4" />
+            </button>
+          </Magnet>
+        )}
+
         {/* Download Apps Button */}
         {onOpenDownloadApps && (
           <Magnet padding={10} magnetStrength={0.25}>
@@ -321,4 +346,3 @@ export const Header: React.FC<HeaderProps> = ({
     </header>
   );
 };
-

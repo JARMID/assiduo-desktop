@@ -36,6 +36,7 @@ interface CommandPaletteProps {
   onOpenNewSession: () => void;
   onOpenSecurity: () => void;
   onOpenDownloadApps?: () => void;
+  onOpenGuide?: () => void;
   onSelectStudent: (student: Student) => void;
   students: Student[];
 }
@@ -59,6 +60,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
   onOpenNewSession,
   onOpenSecurity,
   onOpenDownloadApps,
+  onOpenGuide,
   onSelectStudent,
   students,
 }) => {
@@ -297,6 +299,17 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
         },
       },
       {
+        id: 'act-guide',
+        title: 'Guide d\'utilisation & Manuel Réglementaire Système',
+        category: 'ACTION',
+        shortcut: 'F1',
+        icon: <BookOpen className="w-4 h-4 text-indigo-400" />,
+        action: () => {
+          onClose();
+          onOpenGuide?.();
+        },
+      },
+      {
         id: 'act-download-apps',
         title: 'Télécharger les Applications Mobiles (QR & APK)',
         category: 'ACTION',
@@ -317,6 +330,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
       onOpenNewSession,
       onOpenSecurity,
       onOpenDownloadApps,
+      onOpenGuide,
     ]
   );
 
